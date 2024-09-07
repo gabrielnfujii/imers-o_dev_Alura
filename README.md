@@ -1,4 +1,4 @@
-##Busca Rápida de Jogadores de Valorant** 
+##Busca Rápida de Jogadores de Valorant - Imersão Dev com Google Gemini
 
 **O que faz essa aplicação?**
 
