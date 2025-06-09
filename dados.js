@@ -11,7 +11,7 @@ let dados = [
     },
     {
         titulo: "Saadhak",
-        descricao: "Saadhak é um jogador brasileiro de VALORANT conhecido por sua habilidade com o Operator e liderança dentro da LOUD e do seu pael de igl.",
+        descricao: "Saadhak é um jogador argentino de VALORANT conhecido por sua habilidade com a Operator e liderança dentro da LOUD e do seu pael de igl.",
         link: "https://liquipedia.net/valorant/Saadhak"
     },
     {

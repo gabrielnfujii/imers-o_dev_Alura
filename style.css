@@ -32,73 +32,136 @@ section {
 
 /* Estiliza os inputs dentro das seções */
 section input {
-    width: 30rem; /* Largura dos inputs */
-    border: none; /* Remove a borda padrão */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 1.5rem; /* Borda arredondada */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
-    color: #45474B; /* Cor do texto */
-    font-size: 1rem; /* Tamanho da fonte */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
+    width: 30rem;
+    border: 2px solid #30475E;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    color: #45474B;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #F5F7F8;
+}
+
+section input:focus {
+    outline: none;
+    border-color: #222831;
+    box-shadow: 0 0 10px rgba(48, 71, 94, 0.3);
+    transform: scale(1.02);
 }
 
 /* Estiliza os botões dentro das seções */
 section button {
-    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 1.5rem; /* Borda arredondada */
-    background-color: #30475E; /* Cor de fundo do botão */
-    color: #F5F7F8; /* Cor do texto do botão */
-    font-size: 1rem; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #30475E;
+    color: #F5F7F8;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Adiciona efeito hover ao botão de pesquisa */
 section button:hover {
-    background-color: #30475E; /* Muda a cor de fundo ao passar o mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra mais intensa */
+    background-color: #222831;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section button:active {
+    transform: translateY(0);
 }
 
 /* Estiliza a caixa de resultados da pesquisa */
 .resultados-pesquisa {
-    width: 60rem; /* Largura máxima da caixa de resultados */
-    height: 46vh; /* Altura máxima da caixa de resultados */
-    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
-    margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 0.6rem; /* Borda arredondada */
+    width: 60rem;
+    height: 46vh;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    scrollbar-width: thin;
+    scrollbar-color: #30475E #F5F7F8;
+}
+
+.resultados-pesquisa::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resultados-pesquisa::-webkit-scrollbar-track {
+    background: #F5F7F8;
+    border-radius: 4px;
+}
+
+.resultados-pesquisa::-webkit-scrollbar-thumb {
+    background-color: #30475E;
+    border-radius: 4px;
 }
 
 /* Estiliza cada item de resultado */
 .item-resultado {
-    background: #FFFFFF; /* Cor de fundo dos itens */
-    border-radius: 0.6rem; /* Borda arredondada */
-    padding: 1rem; /* Espaçamento interno */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background: #FFFFFF;
+    border-radius: 0.6rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #30475E;
+}
+
+.item-resultado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #222831;
 }
 
 /* Estiliza os títulos dentro dos itens de resultado */
 .item-resultado h2 {
-    font-size: 1.5rem; /* Tamanho da fonte */
-    color: #222831; /* Cor do texto */
+    font-size: 1.5rem;
+    color: #222831;
+    margin-bottom: 0.5rem;
 }
 
 /* Estiliza os links dentro dos itens de resultado */
 .item-resultado a {
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-    color: #30475E; /* Cor do texto dos links */
+    text-decoration: none;
+    color: #30475E;
+    transition: all 0.3s ease;
 }
 
-/* Estiliza os links quando são passados o mouse sobre */
-.item-resultado a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+.item-resultado a:not(.botao-info) {
+    display: inline-block;
+}
+
+.item-resultado a:not(.botao-info):hover {
+    color: #222831;
+    transform: translateX(5px);
 }
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
-    color: #45474B; /* Cor do texto */
-    margin: 0.5rem 0; /* Margem acima e abaixo */
+    color: #45474B;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+/* Adiciona animação de carregamento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item-resultado {
+    animation: fadeIn 0.5s ease-out;
 }
 
 /* Estiliza o rodapé da página */
@@ -163,4 +226,73 @@ footer {
     footer {
         font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
     }
+}
+
+/* Estiliza o feedback de carregamento */
+.loading {
+    text-align: center;
+    color: #30475E;
+    font-size: 1.2rem;
+    padding: 2rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Estiliza as mensagens de erro */
+.mensagem-erro {
+    color: #dc3545;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8d7da;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+/* Estiliza o contador de resultados */
+.contador-resultados {
+    color: #30475E;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #F5F7F8;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+/* Estiliza o botão de mais informações */
+.botao-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #30475E;
+    color: #F5F7F8 !important;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.botao-info:hover {
+    background-color: #222831;
+    transform: translateX(5px);
+    color: #F5F7F8 !important;
+}
+
+.botao-info svg {
+    transition: transform 0.3s ease;
+}
+
+.botao-info:hover svg {
+    transform: translateX(3px);
 }

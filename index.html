@@ -14,7 +14,7 @@
     </header>
     <main>
         <section>
-            <input type="text" name="pesquisa" placeholder="Digite o nome do jogador"id="campo-pesquisa">
+            <input type="text" name="pesquisa" placeholder="Digite o nome do jogador" id="campo-pesquisa" onkeypress="if(event.key === 'Enter') pesquisar()">
             <button onclick="pesquisar()">Pesquisar</button>
         </section>
         <section class="resultados-pesquisa"
