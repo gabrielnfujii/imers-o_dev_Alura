@@ -67,4 +67,7 @@ document.getElementById("campo-pesquisa").addEventListener("keypress", function(
   
 // console.log(dados);
   
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = pesquisar;
+}
   
