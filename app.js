@@ -1,73 +1,122 @@
-function pesquisar() {
-    // Obtém a seção HTML onde os resultados serão exibidos
-    let section = document.getElementById("resultados-pesquisa");
-    let campoPesquisa = document.getElementById("campo-pesquisa").value
-    section.classList.add("resultados");
-
-    // Adiciona feedback visual de carregamento
-    section.innerHTML = `<div class="loading">Pesquisando...</div>`;
-
-    // Simula um pequeno delay para melhor experiência do usuário
-    setTimeout(() => {
-        // se campo pesquisa for uma string sem nada
-        if (campoPesquisa == "") {
-            section.innerHTML = `<p class="mensagem-erro">Por favor, digite algo para pesquisar.</p>`;
-            return
-        }
-    
-        campoPesquisa = campoPesquisa.toLowerCase()
-    
-        // Inicializa uma string vazia para armazenar os resultados
-        let resultados = "";
-        let titulo = "";
-        let descricao = "";
-        let encontrados = 0;
-    
-        // Itera sobre cada dado da pesquisa
-        for (let dado of dados) {
-            titulo = dado.titulo.toLocaleLowerCase()
-            descricao = dado.descricao.toLocaleLowerCase()
-            // se titulo includes campoPesquisa
-            if (titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa)) {
-                encontrados++;
-                // Cria o HTML para um item de resultado
-                resultados += `
-                    <div class="item-resultado">
-                        <h2>
-                            <a href="#" target="_blank">${dado.titulo}</a>
-                        </h2>
-                        <p class="descricao-meta">${dado.descricao}</p>
-                        <a href="${dado.link}" target="_blank" class="botao-info">
-                            <span>Mais informações</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                            </svg>
-                        </a>
-                    </div>
-                `;
-            }
-        }
-    
-        // Adiciona contador de resultados
-        const contador = encontrados > 0 
-            ? `<p class="contador-resultados">${encontrados} resultado(s) encontrado(s)</p>`
-            : '';
-    
-        // Atualiza o conteúdo da seção com os resultados
-        section.innerHTML = contador + (resultados || `<p class="mensagem-erro">Nenhum resultado encontrado para "${campoPesquisa}".</p>`);
-    }, 500); // Delay de 500ms
+function normalizarTexto(texto) {
+    return texto
+        .toString()
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
 }
 
-// Adiciona evento de tecla Enter no campo de pesquisa
-document.getElementById("campo-pesquisa").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
+function criarLinkTitulo(titulo) {
+    const tituloElemento = document.createElement('h2');
+    const linkTitulo = document.createElement('a');
+
+    linkTitulo.href = '#';
+    linkTitulo.target = '_blank';
+    linkTitulo.rel = 'noopener noreferrer';
+    linkTitulo.textContent = titulo;
+
+    tituloElemento.appendChild(linkTitulo);
+    return tituloElemento;
+}
+
+function criarBotaoInfo(link) {
+    const botao = document.createElement('a');
+    botao.href = link;
+    botao.target = '_blank';
+    botao.rel = 'noopener noreferrer';
+    botao.className = 'botao-info';
+
+    const texto = document.createElement('span');
+    texto.textContent = 'Mais informações';
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.setAttribute('width', '16');
+    svg.setAttribute('height', '16');
+    svg.setAttribute('fill', 'currentColor');
+    svg.setAttribute('viewBox', '0 0 16 16');
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill-rule', 'evenodd');
+    path.setAttribute('d', 'M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z');
+
+    svg.appendChild(path);
+    botao.append(texto, svg);
+
+    return botao;
+}
+
+function renderizarResultados(section, resultadosEncontrados, termoPesquisado) {
+    section.innerHTML = '';
+
+    if (resultadosEncontrados.length > 0) {
+        const contador = document.createElement('p');
+        contador.className = 'contador-resultados';
+        contador.textContent = `${resultadosEncontrados.length} resultado(s) encontrado(s)`;
+        section.appendChild(contador);
+
+        resultadosEncontrados.forEach((dado) => {
+            const item = document.createElement('div');
+            item.className = 'item-resultado';
+
+            const descricao = document.createElement('p');
+            descricao.className = 'descricao-meta';
+            descricao.textContent = dado.descricao;
+
+            item.appendChild(criarLinkTitulo(dado.titulo));
+            item.appendChild(descricao);
+            item.appendChild(criarBotaoInfo(dado.link));
+            section.appendChild(item);
+        });
+
+        return;
+    }
+
+    const mensagem = document.createElement('p');
+    mensagem.className = 'mensagem-erro';
+    mensagem.textContent = `Nenhum resultado encontrado para "${termoPesquisado}".`;
+    section.appendChild(mensagem);
+}
+
+function pesquisar() {
+    const section = document.getElementById('resultados-pesquisa');
+    const campoPesquisaElement = document.getElementById('campo-pesquisa');
+    const campoPesquisa = normalizarTexto(campoPesquisaElement.value);
+
+    section.innerHTML = '<div class="loading">Pesquisando...</div>';
+
+    setTimeout(() => {
+        if (!campoPesquisa) {
+            section.innerHTML = '<p class="mensagem-erro">Por favor, digite algo para pesquisar.</p>';
+            return;
+        }
+
+        const resultadosEncontrados = dados.filter((dado) => {
+            const titulo = normalizarTexto(dado.titulo);
+            const descricao = normalizarTexto(dado.descricao);
+            return titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa);
+        });
+
+        renderizarResultados(section, resultadosEncontrados, campoPesquisaElement.value.trim());
+    }, 500);
+}
+
+const campoPesquisa = document.getElementById('campo-pesquisa');
+const formPesquisa = document.getElementById('form-pesquisa');
+
+formPesquisa.addEventListener('submit', (event) => {
+    event.preventDefault();
+    pesquisar();
+});
+
+campoPesquisa.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
         pesquisar();
     }
 });
-  
-// console.log(dados);
-  
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = pesquisar;
+    module.exports = { pesquisar, normalizarTexto };
 }
-  

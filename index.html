@@ -14,12 +14,13 @@
     </header>
     <main>
         <section>
-            <input type="text" name="pesquisa" placeholder="Digite o nome do jogador" id="campo-pesquisa" onkeypress="if(event.key === 'Enter') pesquisar()">
-            <button onclick="pesquisar()">Pesquisar</button>
+            <form id="form-pesquisa" class="form-pesquisa">
+                <label for="campo-pesquisa">Buscar jogador</label>
+                <input type="text" name="pesquisa" placeholder="Digite o nome do jogador" id="campo-pesquisa">
+                <button type="submit">Pesquisar</button>
+            </form>
         </section>
-        <section class="resultados-pesquisa"
-        id="resultados-pesquisa">
-        </section>
+        <section class="resultados-pesquisa" id="resultados-pesquisa" aria-live="polite"></section>
     </main>
     <footer>
         <p>

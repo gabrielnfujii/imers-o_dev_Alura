@@ -3,35 +3,53 @@
 
 /* Estiliza o corpo da página */
 body {
-    font-family: "Chakra Petch", sans-serif; /* Define a fonte padrão */
-    background-color: #DDDDDD; /* Cor de fundo da página */
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    height: 100vh; /* Preenche a altura total da viewport */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o padding padrão */
+    font-family: "Chakra Petch", sans-serif;
+    background-color: #DDDDDD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 2rem;
+}
+
+main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Estiliza os títulos h1 */
 h1 {
-    font-size: 2.5rem; /* Tamanho da fonte */
-    color: #222831; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
-    letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    font-size: 2.5rem;
+    color: #222831;
+    text-align: center;
+    letter-spacing: 0.4rem;
 }
 
 /* Estiliza as seções da página */
 section {
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form-pesquisa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Estiliza os inputs dentro das seções */
-section input {
+.form-pesquisa input {
     width: 30rem;
     border: 2px solid #30475E;
     padding: 1rem;
@@ -44,7 +62,7 @@ section input {
     background-color: #F5F7F8;
 }
 
-section input:focus {
+.form-pesquisa input:focus {
     outline: none;
     border-color: #222831;
     box-shadow: 0 0 10px rgba(48, 71, 94, 0.3);
@@ -52,7 +70,7 @@ section input:focus {
 }
 
 /* Estiliza os botões dentro das seções */
-section button {
+.form-pesquisa button {
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 1.5rem;
@@ -65,20 +83,20 @@ section button {
     overflow: hidden;
 }
 
-section button:hover {
+.form-pesquisa button:hover {
     background-color: #222831;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-section button:active {
+.form-pesquisa button:active {
     transform: translateY(0);
 }
 
 /* Estiliza a caixa de resultados da pesquisa */
 .resultados-pesquisa {
-    width: 60rem;
-    height: 46vh;
+    width: min(60rem, 92vw);
+    max-height: 55vh;
     overflow-y: auto;
     margin-top: 1rem;
     padding: 1rem;
@@ -110,6 +128,7 @@ section button:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border-left: 4px solid #30475E;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .item-resultado:hover {
@@ -118,14 +137,12 @@ section button:active {
     border-left: 4px solid #222831;
 }
 
-/* Estiliza os títulos dentro dos itens de resultado */
 .item-resultado h2 {
     font-size: 1.5rem;
     color: #222831;
     margin-bottom: 0.5rem;
 }
 
-/* Estiliza os links dentro dos itens de resultado */
 .item-resultado a {
     text-decoration: none;
     color: #30475E;
@@ -141,94 +158,83 @@ section button:active {
     transform: translateX(5px);
 }
 
-/* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
     color: #45474B;
     margin: 0.5rem 0;
     line-height: 1.5;
 }
 
-/* Adiciona animação de carregamento */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.item-resultado {
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* Estiliza o rodapé da página */
 footer {
-    background-color: #F5F7F8; /* Cor de fundo do rodapé */
-    color: #45474B; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
-    padding: 0; /* Espaçamento interno */
-    width: 100%; /* Largura total da página */
-    position: absolute; /* Posiciona o rodapé */
-    bottom: 0; /* Alinha ao fundo da página */
-    font-size: 1rem; /* Tamanho da fonte */
+    background-color: #F5F7F8;
+    color: #45474B;
+    text-align: center;
+    padding: 0.4rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem; /* Tamanho da fonte em telas menores */
-        letter-spacing: 0.2rem; /* Espaçamento entre letras em telas menores */
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
     }
 
-    section input {
-        width: 25rem; /* Largura dos inputs em telas menores */
-        padding: 0.8rem; /* Espaçamento interno em telas menores */
+    .form-pesquisa input {
+        width: min(25rem, 90vw);
+        padding: 0.8rem;
     }
 
     .resultados-pesquisa {
-        width: 40rem; /* Largura da caixa de resultados em telas menores */
-        height: 40vh; /* Altura da caixa de resultados em telas menores */
+        max-height: 50vh;
     }
 
     .item-resultado h2 {
-        font-size: 1.3rem; /* Tamanho da fonte dos títulos em telas menores */
+        font-size: 1.3rem;
     }
 }
 
-/* Responsividade para celulares */
 @media (max-width: 480px) {
-
     h1 {
-        font-size: 1.8rem; /* Tamanho da fonte em telas pequenas */
-        letter-spacing: 0.1rem; /* Espaçamento entre letras em telas pequenas */
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
     }
 
-    section input {
-        width: 17rem; /* Largura total dos inputs em telas pequenas */
+    .form-pesquisa input {
+        width: 90vw;
     }
 
-    section button {
-        padding: 0.6rem 1rem; /* Espaçamento interno do botão em telas pequenas */
-        font-size: 0.9rem; /* Tamanho da fonte do botão em telas pequenas */
+    .form-pesquisa button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 
     .resultados-pesquisa {
-        width: 90%; /* Largura da caixa de resultados em telas pequenas */
-        height: 50vh; /* Altura da caixa de resultados em telas pequenas */
+        max-height: 48vh;
+        width: 90%;
     }
 
     .item-resultado h2 {
-        font-size: 1.1rem; /* Tamanho da fonte dos títulos em telas pequenas */
+        font-size: 1.1rem;
     }
 
     footer {
-        font-size: 0.9rem; /* Tamanho da fonte do rodapé em telas pequenas */
+        font-size: 0.9rem;
     }
 }
 
-/* Estiliza o feedback de carregamento */
 .loading {
     text-align: center;
     color: #30475E;
@@ -241,15 +247,16 @@ footer {
     0% {
         opacity: 0.6;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: 0.6;
     }
 }
 
-/* Estiliza as mensagens de erro */
 .mensagem-erro {
     color: #dc3545;
     text-align: center;
@@ -259,7 +266,6 @@ footer {
     margin: 1rem 0;
 }
 
-/* Estiliza o contador de resultados */
 .contador-resultados {
     color: #30475E;
     font-size: 0.9rem;
@@ -270,7 +276,6 @@ footer {
     text-align: center;
 }
 
-/* Estiliza o botão de mais informações */
 .botao-info {
     display: inline-flex;
     align-items: center;
