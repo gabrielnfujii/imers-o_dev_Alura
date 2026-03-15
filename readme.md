@@ -69,27 +69,7 @@ Como fã de esports e entusiasta de desenvolvimento web, criei esta plataforma p
 
 ---
 
-## 🎬 Demonstração
 
-<div align="center">
-
-### 🖥️ Interface Principal
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzR3Z2h0bXZ3MzV3anNlbWJxdGxvYmh3YnB4cjNrZjN3NXJ3dnR4ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/077i6AULCXc0FKTj9s/giphy.gif" width="600" alt="Demo">
-
-### 📱 Responsividade
-
-<img src="https://media.giphy.com/media/Ln2dAW9oycjgmTpjX9/giphy.gif" width="300" alt="Responsive">
-
-### 🔍 Busca em Ação
-
-<img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="600" alt="Search Demo">
-
-**🌐 [Acesse a aplicação ao vivo!](https://imers-o-dev-alura.vercel.app/)**
-
-</div>
-
----
 
 ## 🛠️ Tecnologias
 
