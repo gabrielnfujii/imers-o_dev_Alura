@@ -17,7 +17,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 ![GitHub license](https://img.shields.io/github/license/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 
-[🚀 Ver Demo]([https://gabrielnfujii.github.io/imers-o_dev_Alura/](https://imers-o-dev-alura.vercel.app/)) • [📝 Reportar Bug](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues) • [✨ Sugerir Feature](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues)
+[🚀 Ver Demo](https://imers-o-dev-alura.vercel.app/) • [📝 Reportar Bug](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues) • [✨ Sugerir Feature](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues)
 
 </div>
 
