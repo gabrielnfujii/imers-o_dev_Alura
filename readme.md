@@ -15,7 +15,6 @@
 ![GitHub forks](https://img.shields.io/github/forks/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 ![GitHub stars](https://img.shields.io/github/stars/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 ![GitHub issues](https://img.shields.io/github/issues/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
-![GitHub license](https://img.shields.io/github/license/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 
 [🚀 Ver Demo](https://imers-o-dev-alura.vercel.app/) • [📝 Reportar Bug](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues) • [✨ Sugerir Feature](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues)
 
@@ -29,7 +28,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-2.0-blue?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-Online-00C7B7?style=for-the-badge&logo=vercel)
 
 </div>
 
@@ -70,6 +69,27 @@ Como fã de esports e entusiasta de desenvolvimento web, criei esta plataforma p
 
 ---
 
+## 🎬 Demonstração
+
+<div align="center">
+
+### 🖥️ Interface Principal
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzR3Z2h0bXZ3MzV3anNlbWJxdGxvYmh3YnB4cjNrZjN3NXJ3dnR4ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/077i6AULCXc0FKTj9s/giphy.gif" width="600" alt="Demo">
+
+### 📱 Responsividade
+
+<img src="https://media.giphy.com/media/Ln2dAW9oycjgmTpjX9/giphy.gif" width="300" alt="Responsive">
+
+### 🔍 Busca em Ação
+
+<img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="600" alt="Search Demo">
+
+**🌐 [Acesse a aplicação ao vivo!](https://imers-o-dev-alura.vercel.app/)**
+
+</div>
+
+---
 
 ## 🛠️ Tecnologias
 
@@ -92,9 +112,9 @@ Como fã de esports e entusiasta de desenvolvimento web, criei esta plataforma p
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-### Hospedagem
+### Hospedagem & Deploy
 
-![Vercel]([https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github-pages&logoColor=white](https://imers-o-dev-alura.vercel.app/))
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 </div>
 
@@ -111,7 +131,11 @@ Apenas um navegador moderno:
 ![Safari](https://img.shields.io/badge/Safari-000000?style=for-the-badge&logo=safari&logoColor=white)
 ![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white)
 
-### ⚙️ Instalação
+### 🌐 Acesso Online
+
+Simplesmente acesse: **[https://imers-o-dev-alura.vercel.app/](https://imers-o-dev-alura.vercel.app/)**
+
+### ⚙️ Instalação Local
 ```bash
 # 1️⃣ Clone o repositório
 git clone https://github.com/gabrielnfujii/imers-o_dev_Alura.git
@@ -140,7 +164,7 @@ cd imers-o_dev_Alura
  ┣ 📜 style.css           # Estilos e animações
  ┣ 📜 app.js              # Lógica da aplicação
  ┣ 📜 dados.js            # Base de dados dos jogadores
- ┗ 📜 README.md           # Você está aqui! 😄
+ ┗ 📜 readme.md           # Documentação
 ```
 
 ---
@@ -162,9 +186,131 @@ cd imers-o_dev_Alura
 
 </div>
 
+---
 
+## 🔮 Próximas Features
 
-</div>
-```
+- [ ] Sistema de favoritos com localStorage
+- [ ] Comparação lado a lado entre jogadores
+- [ ] Estatísticas detalhadas por agente
+- [ ] Integração com API oficial do Valorant
+- [ ] Dark/Light mode toggle
+- [ ] Gráficos interativos de performance
+- [ ] Filtro por função/role
+- [ ] Seção de notícias e atualizações
+- [ ] Modo torneios e rankings
+- [ ] Sistema de comentários
 
 ---
+
+## 🤝 Como Contribuir
+
+<div align="center">
+
+<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="300">
+
+### Contribuições são sempre bem-vindas!
+
+</div>
+
+1. 🍴 Faça um **Fork** do projeto
+2. 🌿 Crie uma **Branch** (`git checkout -b feature/NovaFuncionalidade`)
+3. ✅ **Commit** suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. 📤 Faça o **Push** (`git push origin feature/NovaFuncionalidade`)
+5. 🎉 Abra um **Pull Request**
+
+### 💡 Ideias de Contribuição
+
+![Good First Issue](https://img.shields.io/badge/Good%20First%20Issue-Sim-brightgreen?style=for-the-badge)
+![Help Wanted](https://img.shields.io/badge/Help%20Wanted-Sim-blue?style=for-the-badge)
+
+- 🎨 Melhorar o design
+- 📊 Adicionar mais estatísticas
+- 🌍 Tradução para outros idiomas
+- 🐛 Corrigir bugs
+- ⚡ Otimizar performance
+- 📝 Melhorar documentação
+
+---
+
+## 📊 Estatísticas do Projeto
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=gabrielnfujii&show_icons=true&theme=tokyonight&hide_border=true" width="400">
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielnfujii&layout=compact&theme=tokyonight&hide_border=true" width="400">
+
+</div>
+
+---
+
+## 👨‍💻 Autor
+
+<div align="center">
+
+<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
+
+### **Gabriel Fujii**
+
+[![GitHub](https://img.shields.io/badge/GitHub-gabrielnfujii-181717?style=for-the-badge&logo=github)](https://github.com/gabrielnfujii)
+[![Email](https://img.shields.io/badge/Email-gnf@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gnf@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Vercel-000000?style=for-the-badge&logo=vercel)](https://imers-o-dev-alura.vercel.app/)
+
+<img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
+
+</div>
+
+---
+
+## 🙏 Agradecimentos
+
+<div align="center">
+
+Obrigado a todos que contribuíram para este projeto!
+
+<img src="https://media.giphy.com/media/KJ1f5iTl4Oo7u/giphy.gif" width="300">
+
+### Agradecimentos Especiais
+
+🎓 **Alura** - Pela incrível Imersão Dev  
+🤖 **Google Gemini** - Pelo suporte com IA  
+🎮 **Riot Games** - Pelo fantástico jogo Valorant  
+⚡ **Vercel** - Pela hospedagem gratuita e rápida  
+👥 **Comunidade** - Pelos dados e feedback  
+
+</div>
+
+---
+
+## 📞 Contato & Suporte
+
+<div align="center">
+
+Tem dúvidas? Precisa de ajuda?
+
+[![Issues](https://img.shields.io/badge/Issues-Abrir-red?style=for-the-badge&logo=github)](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues)
+[![Email](https://img.shields.io/badge/Email-Enviar-orange?style=for-the-badge&logo=gmail)](mailto:gnf@gmail.com)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://imers-o-dev-alura.vercel.app/)
+
+</div>
+
+---
+
+<div align="center">
+
+## 💖 Apoie o Projeto
+
+Se este projeto te ajudou, considere dar uma ⭐!
+
+[![Star](https://img.shields.io/github/stars/gabrielnfujii/imers-o_dev_Alura?style=social)](https://github.com/gabrielnfujii/imers-o_dev_Alura/stargazers)
+[![Fork](https://img.shields.io/github/forks/gabrielnfujii/imers-o_dev_Alura?style=social)](https://github.com/gabrielnfujii/imers-o_dev_Alura/network/members)
+[![Watch](https://img.shields.io/github/watchers/gabrielnfujii/imers-o_dev_Alura?style=social)](https://github.com/gabrielnfujii/imers-o_dev_Alura/watchers)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,20,24&height=100&section=footer" width="100%">
+
+**⭐ Feito com ❤️ e ☕ por Gabriel Fujii ⭐**
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fgabrielnfujii%2Fimers-o_dev_Alura&label=Visitantes&countColor=%23ff4655&style=for-the-badge&labelStyle=upper)
+
+</div>
