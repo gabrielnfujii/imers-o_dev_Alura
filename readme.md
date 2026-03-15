@@ -17,7 +17,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 ![GitHub license](https://img.shields.io/github/license/gabrielnfujii/imers-o_dev_Alura?style=for-the-badge&logo=github)
 
-[🚀 Ver Demo](https://gabrielnfujii.github.io/imers-o_dev_Alura/) • [📝 Reportar Bug](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues) • [✨ Sugerir Feature](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues)
+[🚀 Ver Demo]([https://gabrielnfujii.github.io/imers-o_dev_Alura/](https://imers-o-dev-alura.vercel.app/)) • [📝 Reportar Bug](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues) • [✨ Sugerir Feature](https://github.com/gabrielnfujii/imers-o_dev_Alura/issues)
 
 </div>
 
@@ -94,7 +94,7 @@ Como fã de esports e entusiasta de desenvolvimento web, criei esta plataforma p
 
 ### Hospedagem
 
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github-pages&logoColor=white)
+![Vercel]([https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=github-pages&logoColor=white](https://imers-o-dev-alura.vercel.app/))
 
 </div>
 
